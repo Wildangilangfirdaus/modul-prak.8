@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        input {
+            width: 50px;
+            margin: 5px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            width: 40px;
+            margin: 5px;
+            padding: 5px;
+            font-weight: bold;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #hasil {
+            width: 100px;
+            margin: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .calculator-container {
+            display: inline-block;
+            text-align: left;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .last-modified {
+            font-style: italic;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <h2>Kalkulator Sederhana</h2>
+        
+        <label for="bil1">Bilangan 1:</label>
+        <input type="text" id="bil1" placeholder="Masukkan angka">
+
+        <label for="bil2">Bilangan 2:</label>
+        <input type="text" id="bil2" placeholder="Masukkan angka">
+
+        <br>
+
+        <button onclick="tambah()">+</button>
+        <button onclick="kurang()">-</button>
+        <button onclick="kali()">x</button>
+        <button onclick="bagi()">/</button>
+
+        <br>
+
+        <label for="hasil">Hasil:</label>
+        <input type="text" id="hasil" readonly>
+    </div>
+
+    <script>
+        function tambah() {
+            var bil1 = parseFloat(document.getElementById("bil1").value) || 0;
+            var bil2 = parseFloat(document.getElementById("bil2").value) || 0;
+            document.getElementById("hasil").value = bil1 + bil2;
+        }
+
+        function kurang() {
+            var bil1 = parseFloat(document.getElementById("bil1").value) || 0;
+            var bil2 = parseFloat(document.getElementById("bil2").value) || 0;
+            document.getElementById("hasil").value = bil1 - bil2;
+        }
+
+        function kali() {
+            var bil1 = parseFloat(document.getElementById("bil1").value) || 0;
+            var bil2 = parseFloat(document.getElementById("bil2").value) || 0;
+            document.getElementById("hasil").value = bil1 * bil2;
+        }
+
+        function bagi() {
+            var bil1 = parseFloat(document.getElementById("bil1").value) || 0;
+            var bil2 = parseFloat(document.getElementById("bil2").value) || 0;
+            document.getElementById("hasil").value = bil1 / bil2;
+        }
+    </script>
+
+    <div class="last-modified">
+        Dimodifikasi terakhir pada: <script>document.write(document.lastModified);</script>
+    </div>
+</body>
+</html>
